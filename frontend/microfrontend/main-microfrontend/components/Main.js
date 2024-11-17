@@ -1,6 +1,8 @@
 import React from 'react';
-import Card from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+
+// Динамическое подключение удалённого модуля Gallery
+const Card = React.lazy(() => import( '../../gallery-microfrontend/components/Card'));
 
 function Main({ cards, onEditProfile, onAddPlace, onEditAvatar, onCardClick, onCardLike, onCardDelete }) {
   const currentUser = React.useContext(CurrentUserContext);
